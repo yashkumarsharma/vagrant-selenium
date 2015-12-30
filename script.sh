@@ -101,4 +101,4 @@ sudo npm install -g protractor
 #=========================================================
 echo "Reboot the VM"
 #=========================================================
-sudo reboot
+sudo shutdown -r now
