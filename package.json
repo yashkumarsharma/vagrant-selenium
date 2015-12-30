@@ -1,6 +1,6 @@
 {
   "name": "vagrant-e2etesting-protractor",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor",
   "repository": {
     "type": "git",
