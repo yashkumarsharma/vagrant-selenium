@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+# Thank you Kevin Vicrey for his orignal work at https://github.com/Anomen/vagrant-selenium
+# In order to modify the original proviosning script file, we add git & build-essential 
+# software package and "Install Node.js and Protractor" section
+# 
 #=========================================================
 
 #=========================================================
