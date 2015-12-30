@@ -7,17 +7,29 @@ Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12
 
 ![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
 
-
-# Install
+# Software Requirements
 
   * [Vagrant](https://www.vagrantup.com/downloads.html)
   * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+# Install with NPM (Run Vagrant in your Node project)
+
+```
+$ cd YourNodeJSProject
+$ npm install vagrant-e2etesting-protractor
+$ cd node_modules/vagrant-e2etesting-protractor
+$ vagrant up
+```
+
+# Install with GIT
 
 ```
 $ git clone https://github.com/vorachet/vagrant-e2etesting-protractor.git
 $ cd vagrant-e2etesting-protractor
 $ vagrant up
 ```
+
+
 
 # Software Specifications
 

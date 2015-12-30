@@ -1,0 +1,23 @@
+{
+  "name": "vagrant-e2etesting-protractor",
+  "version": "0.0.2",
+  "description": "Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vorachet/vagrant-e2etesting-protractor.git"
+  },
+  "keywords": [
+    "E2ETesting",
+    "AngularJS",
+    "Protractor"
+  ],
+  "author": "Vorachet Jaroensawas <vorachet@gmail.com> (https://github.com/vorachet)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vorachet/vagrant-e2etesting-protractor/issues"
+  },
+  "homepage": "https://github.com/vorachet/vagrant-e2etesting-protractor#readme"
+}
