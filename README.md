@@ -1,9 +1,11 @@
-# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor
+# Pre-installed Selenium infrastructure Vagrant configuration for a complete AngularJS E2E Testing with Protractor
+
+This project is designed for Selenium beginners who want to install a complete Selenium infrastructure within minutes and one step. E2E-Testing experts who are a minimalist can also choose to add this project to your minimal set in deploying a complete Selenium infrastructure for Protractor users and you can also consider to extend this project for your advanced test automation. Everyting can be installed with single npm install command which allows AngularJS developers/testers get ready on a consistent Protractor environment.
 
 # Prerequisite Software
 
-  * [Vagrant https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
-  * [VirtualBox https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
+  * [Vagrant - https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
+  * [VirtualBox - https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 # Install 
 
@@ -195,6 +197,8 @@ $ vagrant reload
 
 It takes time for the first "vagrant up". You need to download BaseBox (the Ubuntu server) and to execute provisioning script to install a complete Selenium infrastructure and Protractor.
 
+This screen recording demonstrates simplified Protractor test cases that borrow from [http://www.protractortest.org/#/tutorial](http://www.protractortest.org/#/tutorial). The screen recording shows you the steps to run test examples using real and headless browser.
+ 
 ![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
 
 
