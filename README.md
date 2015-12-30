@@ -16,7 +16,7 @@ Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12
 
 ```
 $ cd {YourNodeJSProject}
-$ npm install vagrant-e2etesting-protractor --save-dev
+$ npm install vagrant-e2etesting-protractor 
 $ cd node_modules/vagrant-e2etesting-protractor
 $ vagrant up
 
@@ -57,15 +57,15 @@ NetworkInterfaces:
               Internet
                  ^
                  | 
-    [       Host       ]
+         [  Host ]
          |       ^
          v       |
     [VirtualBoxSoftware]  
          |       ^
          v       |
        [eth1]  [eth0]         
-       [    VM      ]  
-         eth0: 10.0.2.15  (NAT)
+       [     VM     ]  
+         eth0: 10.x.x.x  (NAT)
          eth1: 192.168.33.10  (HostOnly)
          lo: 127.0.0.1
          LocalSelenium: http://localhost:4444/wd/hub
@@ -95,21 +95,20 @@ $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
 $ vagrant reload
 ```
 
-
 Selenium server will be started automatically on boot.
 
 # Access VM using SSH
 
 Username: vagrant  Password: vagrant
 
-## Connect to VM using VagrantSSH (does not require password):
+## Access VM using VagrantSSH (does not require password):
 
 ```   
 $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
 $ vagrant ssh
 ```
 
-## Conenct to VM using SSH client (requires password):
+## Access VM using SSH client (requires password):
 
 ```   
 ssh vagrant@192.168.33.10

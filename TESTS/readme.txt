@@ -1,0 +1,1 @@
+TESTS folder is shared inside VM at /home/vagrant/TESTS
