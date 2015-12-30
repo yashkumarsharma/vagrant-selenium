@@ -10,17 +10,15 @@
 
 ```
 $ cd {YourNodeJSProject}
-
 $ npm install vagrant-e2etesting-protractor 
-
 $ cd node_modules/vagrant-e2etesting-protractor
-
 $ vagrant up
 ```
 
 There are two folders named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  
 
-The default Sync folder settings
+The default Sync folder settings.
+
 ```
 ./node_modules/vagrant-e2etesting-protractor/TESTES --> VM --> /home/vagrant/TESTS
 ./node_modules/vagrant-e2etesting-protractor/GettingStarted --> VM --> /home/vagrant/GettingStarted
@@ -32,12 +30,10 @@ In order to manage the collection of Protractor files in your project, you can a
 
 ```
 $ cd YourNodeJSProject
-
 $ ln -s node_modules/vagrant-e2etesting-protractor/TESTS  MyProtractorTests
-
-# All files under MyProtractorTests will be synced /home/vagrant/TESTS/
-
 ```
+
+All files under MyProtractorTests will be synced to the VM fodler "/home/vagrant/TESTS/""
 
 # Software Specifications
 
@@ -81,7 +77,6 @@ NetworkInterfaces:
          RemoteSelenium: http://192.168.33.10:4444/wd/hub
 ```
 
-
 # Run VM
 
 ```
@@ -95,7 +90,6 @@ $ vagrant up
 $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
 $ vagrant halt
 ```
-
 
 # Reload VM
 
@@ -127,7 +121,7 @@ ssh vagrant@192.168.33.10
 
 There are two options you can set Selenium address of Protractor configuration.
 
-### If you run Protractor inside the VM which is provided a complete Selenium server and Protractor, use this address
+### If you run Protractor inside the VM which is provided a complete Selenium infrastructure and Protractor, use this address
 
 ```
 exports.config = {
@@ -146,7 +140,6 @@ $ cd ~/GettingStarted/runProtractorInsideVM
 $ protractor conf.js
 ```
 
-
 ### If you run Protractor on your physical computer and use Selenium infrastructure inside the VM , use this address
 
 ```
@@ -161,9 +154,9 @@ Running example
 
 ```
 $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor/GettingStarted/runProtractorOutsideVM
-##  If you dont have "protractor" command, Use npm to install Protractor globally with "npm install -g protractor"
 $ protractor conf.js
 ```
+If you dont have "protractor" command on your physical machine, Use npm to install Protractor globally with "npm install -g protractor"
 
 
 # Modify Vagrant configuration 
@@ -200,5 +193,7 @@ $ vagrant reload
 ```
 
 # Demo
+
+It takes time for the first "vagrant up". You need to download BaseBox (the Ubuntu server) and to execute provisioning script to install a complete Selenium infrastructure and Protractor.
 
 ![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
