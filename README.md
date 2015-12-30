@@ -2,7 +2,7 @@
 Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12 
 ```
 
-# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor (ubuntu/trusty64)
+# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor
 
 # Install
 
@@ -78,9 +78,6 @@ Use SSH client (requires password):
 ```   
 ssh vagrant@192.168.33.10
 ```
-
-# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor (ubuntu/trusty64) 
-
 
 # Running Protractor inside VM
 
