@@ -5,7 +5,16 @@
 echo "Install the packages..."
 #=========================================================
 sudo apt-get update
-sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox
+sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox git 
+
+
+#=========================================================
+echo "Install Node.js and Protractor"
+#=========================================================
+#
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g protractor
 
 #=========================================================
 echo "Set autologin for the Vagrant user..."
@@ -55,10 +64,8 @@ echo -n "Install tmux scripts..."
 TMUX_SCRIPT=$(cat <<EOF
 #!/bin/sh
 tmux start-server
-
 tmux new-session -d -s selenium
 tmux send-keys -t selenium:0 './chromedriver' C-m
-
 tmux new-session -d -s chrome-driver
 tmux send-keys -t chrome-driver:0 'java -jar selenium-server-standalone.jar' C-m
 EOF
@@ -67,6 +74,13 @@ echo "${TMUX_SCRIPT}"
 echo "${TMUX_SCRIPT}" > tmux.sh
 chmod +x tmux.sh
 chown vagrant:vagrant tmux.sh
+echo "ok"
+
+
+#=========================================================
+echo -n "Install protractor..."
+#=========================================================
+node -g protractor
 echo "ok"
 
 #=========================================================
