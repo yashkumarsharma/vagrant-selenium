@@ -1,10 +1,5 @@
 # Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor
 
-```
-Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12 
-```
-
-
 ![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
 
 # Prerequisites Software
@@ -22,27 +17,25 @@ $ npm install vagrant-e2etesting-protractor
 $ cd node_modules/vagrant-e2etesting-protractor
 
 $ vagrant up
+```
 
-# There is a folder named "TESTES" and "GettingStarted" configured in the Vagrant configuration.
-# The default sync method is rsync. It does not require you give root password.  
-# The rsync synced folder does a one-time one-way sync from the machine running 
-# to the machine being started by Vagrant.  
+There is a folder named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  
 
-# The default Sync folder settings
-# ./node_modules/vagrant-e2etesting-protractor/TESTES --> VM --> /home/vagrant/TESTS
-# ./node_modules/vagrant-e2etesting-protractor/GettingStarted --> VM --> /home/vagrant/GettingStarted
+The default Sync folder settings
+```
+./node_modules/vagrant-e2etesting-protractor/TESTES --> VM --> /home/vagrant/TESTS
+./node_modules/vagrant-e2etesting-protractor/GettingStarted --> VM --> /home/vagrant/GettingStarted
+```
 
-# You can change type: "rsync" to type: "nfs" in Vagrantfile for allowing you have 
-# real-time sync without reloading Vagrant.
+You can change type: "rsync" to type: "nfs" in Vagrantfile for allowing you have real-time sync without reloading Vagrant.
 
-# Notes to Windows users: NFS folders do not work on Windows hosts. 
-# Vagrant will ignore your request for NFS synced folders on Windows.
+```
+Windows users: NFS folders do not work on Windows hosts. Vagrant will ignore your request for NFS synced folders on Windows.
+```
 
-# In order to manage the collection of Protractor files in your project, 
-# you can also choose to make a symbolic link from the TESTES folder 
-# to your project workspace outside the node_modules folder for doing 
-# file sync between your test files and the VM.
+In order to manage the collection of Protractor files in your project, you can also choose to make a symbolic link from the TESTES folder to your project workspace outside the node_modules folder for doing file sync between your test files and the VM.
 
+```
 $ cd YourNodeJSProject
 
 $ ln -s node_modules/vagrant-e2etesting-protractor/TESTS  MyProtractorTests
@@ -50,7 +43,6 @@ $ ln -s node_modules/vagrant-e2etesting-protractor/TESTS  MyProtractorTests
 # All files under MyProtractorTests will be synced /home/vagrant/TESTS/
 
 ```
-
 
 # Software Specifications
 
