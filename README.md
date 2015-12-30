@@ -2,6 +2,8 @@
 Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12 
 ```
 
+# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor (ubuntu/trusty64)
+
 # Install
 
 ```
