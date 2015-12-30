@@ -15,20 +15,19 @@ Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12
 # Install with NPM (Run Vagrant in your Node project)
 
 ```
-$ cd YourNodeJSProject
-$ npm install vagrant-e2etesting-protractor
+$ cd {YourNodeJSProject}
+$ npm install vagrant-e2etesting-protractor --save-dev
 $ cd node_modules/vagrant-e2etesting-protractor
 $ vagrant up
-```
 
-# Install with GIT
+# You can also choose to make a symbolic link to sync your test files to VM 
+
+$ cd YourNodeJSProject
+$ ln -s node_modules/vagrant-e2etesting-protractor/TESTS  MyProtractorTests
+
+# All files under MyProtractorTests will be shared (R/W) to VM /home/vagrant/TESTS/*
 
 ```
-$ git clone https://github.com/vorachet/vagrant-e2etesting-protractor.git
-$ cd vagrant-e2etesting-protractor
-$ vagrant up
-```
-
 
 
 # Software Specifications
@@ -77,42 +76,84 @@ NetworkInterfaces:
 # Run VM
 
 ```
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
 $ vagrant up
 ```
 
+# Stop VM
+
+```
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
+$ vagrant halt
+```
+
+
+# Reload VM
+
+```
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
+$ vagrant reload
+```
+
+
 Selenium server will be started automatically on boot.
 
-# Accessing VM using SSH
+# Access VM using SSH
 
 Username: vagrant  Password: vagrant
 
-Use VagrantSSH (does not require password):
+## Connect to VM using VagrantSSH (does not require password):
 
 ```   
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
 $ vagrant ssh
 ```
 
-Use SSH client (requires password):
+## Conenct to VM using SSH client (requires password):
 
 ```   
 ssh vagrant@192.168.33.10
 ```
 
-# Run Protractor inside VM
+# Selenium addresses
 
-Set Selenium address to [http://localhost:4444/wd/hub]()
-
-# Run Protractor outside VM
-
-Set Selenium address to [http://192.168.33.10:4444/wd/hub]()
-
-# Run test script examples
+## Running Protractor inside VM 
 
 ```
-# Inside VM
-$ cd ~/GettingStarted/examples/SimpleTest
+exports.config = {
+  ...
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  ...
+}
+```
+
+### Example
+
+```
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
+$ vagrant ssh
+$ cd ~/GettingStarted/runProtractorInsideVM
 $ protractor conf.js
 ```
+
+
+## Running Protractor outside VM 
+
+```
+exports.config = {
+  ...
+  seleniumAddress: 'http://192.168.33.10:4444/wd/hub',
+  ...
+}
+
+### Example
+
+```
+$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor/GettingStarted/runProtractorOutsideVM
+##  If you dont have "protractor" command, Use npm to install Protractor globally with "npm install -g protractor"
+$ protractor conf.js
+```
+
 
 # Modify Vagrant configuration 
 
