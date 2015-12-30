@@ -18,9 +18,6 @@ $ cd node_modules/vagrant-e2etesting-protractor
 $ vagrant up
 ```
 
-![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
-
-
 There are two folders named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  
 
 The default Sync folder settings
@@ -128,9 +125,9 @@ ssh vagrant@192.168.33.10
 
 # Selenium addresses
 
-There are two options you can set Selenium addresse in your Protractor configuration.
+There are two options you can set Selenium address of Protractor configuration.
 
-### If you will run Protractor inside the VM which is provided a complete Selenium and Protractor, use this address
+### If you run Protractor inside the VM which is provided a complete Selenium server and Protractor, use this address
 
 ```
 exports.config = {
@@ -150,7 +147,7 @@ $ protractor conf.js
 ```
 
 
-### If you will run Protractor on your physical computer and use Selenium inside the VM , use this address
+### If you run Protractor on your physical computer and use Selenium infrastructure inside the VM , use this address
 
 ```
 exports.config = {
@@ -178,17 +175,30 @@ $ protractor conf.js
 $ vagrant reload
 ```
 
-### Headless E2E Testing 
+### Use NFS for folder sync
+
+```
+# Go to edit Vagrantfile with following lines
+# config.vm.synced_folder "GettingStarted/", "/home/vagrant/GettingStarted" ,  type: "nfs"
+# config.vm.synced_folder "TESTS/", "/home/vagrant/TESTS" ,  type: "nfs"
+
+$ vagrant reload
+```
+
+### Use headless browser
 
 ```
 # Go to edit Vagrantfile (vb.gui = false)
 $ vagrant reload
 ```
 
-### GUI E2E Testing
+### Use real browser
 
 ```
 # Go to edit Vagrantfile (vb.gui = true)
 $ vagrant reload
 ```
 
+# Demo
+
+![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)

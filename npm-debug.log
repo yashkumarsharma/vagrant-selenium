@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.3.12
+3 info using node@v5.2.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/vorachet/vagrant-e2etesting-protractor',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package.tgz not in flight; packing
+9 info lifecycle vagrant-e2etesting-protractor@0.0.9~prepublish: vagrant-e2etesting-protractor@0.0.9
+10 silly lifecycle vagrant-e2etesting-protractor@0.0.9~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package.tgz',
+11 verbose tar pack   '/Users/vorachet/vagrant-e2etesting-protractor' ]
+12 verbose tarball /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package.tgz
+13 verbose folder /Users/vorachet/vagrant-e2etesting-protractor
+14 verbose addLocalTarball adding from inside cache /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package.tgz
+15 silly cache afterAdd vagrant-e2etesting-protractor@0.0.9
+16 verbose afterAdd /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package/package.json not in flight; writing
+17 verbose afterAdd /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package/package.json written
+18 silly publish { name: 'vagrant-e2etesting-protractor',
+18 silly publish   version: '0.0.9',
+18 silly publish   description: 'Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor',
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/vorachet/vagrant-e2etesting-protractor.git' },
+18 silly publish   keywords: [ 'E2ETesting', 'AngularJS', 'Protractor' ],
+18 silly publish   author:
+18 silly publish    { name: 'Vorachet Jaroensawas',
+18 silly publish      email: 'vorachet@gmail.com',
+18 silly publish      url: 'https://github.com/vorachet' },
+18 silly publish   license: 'MIT',
+18 silly publish   bugs: { url: 'https://github.com/vorachet/vagrant-e2etesting-protractor/issues' },
+18 silly publish   homepage: 'https://github.com/vorachet/vagrant-e2etesting-protractor#readme',
+18 silly publish   readme: '# Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor\n\n\n# Prerequisites Software\n\n  * [Vagrant](https://www.vagrantup.com/downloads.html)\n  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)\n\n# Install \n\n```\n$ cd {YourNodeJSProject}\n\n$ npm install vagrant-e2etesting-protractor \n\n$ cd node_modules/vagrant-e2etesting-protractor\n\n$ vagrant up\n```\n\n![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)\n\n\nThere are two folders named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  \n\nThe default Sync folder settings\n```\n./node_modules/vagrant-e2etesting-protractor/TESTES --> VM --> /home/vagrant/TESTS\n./node_modules/vagrant-e2etesting-protractor/GettingStarted --> VM --> /home/vagrant/GettingStarted\n```\n\nYou can change type: "rsync" to type: "nfs" in Vagrantfile for allowing you have real-time sync without reloading Vagrant. For Windows users: NFS folders do not work on Windows hosts. Vagrant will ignore your request for NFS synced folders on Windows.\n\nIn order to manage the collection of Protractor files in your project, you can also choose to make a symbolic link from the TESTES folder to your project workspace outside the node_modules folder for doing file sync between your test files and the VM.\n\n```\n$ cd YourNodeJSProject\n\n$ ln -s node_modules/vagrant-e2etesting-protractor/TESTS  MyProtractorTests\n\n# All files under MyProtractorTests will be synced /home/vagrant/TESTS/\n\n```\n\n# Software Specifications\n\n```\nOS: Ubuntu trusty 64-bit (Ubuntu 14.04.3 LTS)\nWindowMgr: Fluxbox\nDefault Storage: 40GB\nDefault Memory: 500Mb\nJava: OpenJDK 1.7.0_91\nSeleniumServer: v2.48.2\nProtractor: v3.0.0\nChromeDriver: v2.20.353124\nNode.js:  v4.2.4  (NPM 2.14.12)\nGit: v1.9.1\nInstalled Browsers:\n  - Firefox (v.43.0)\n  - Google Chrome (v.47.0.2526.106 64bit)\nNetworkInterfaces:\n  NATAdapter: eth0: 10.x.x.x \n  HostOnlyAdapter: eth1: 192.168.33.10\n```\n\n# Network Configuration\n\n```\n              Internet\n                 ^\n                 | \n         [  Host ]\n         |       ^\n         v       |\n    [VirtualBoxSoftware]  \n         |       ^\n         v       |\n       [eth1]  [eth0]         \n       [     VM     ]  \n         eth0: 10.x.x.x  (NAT)\n         eth1: 192.168.33.10  (HostOnly)\n         lo: 127.0.0.1\n         LocalSelenium: http://localhost:4444/wd/hub\n         RemoteSelenium: http://192.168.33.10:4444/wd/hub\n```\n\n\n# Run VM\n\n```\n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor\n$ vagrant up\n```\n\n# Stop VM\n\n```\n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor\n$ vagrant halt\n```\n\n\n# Reload VM\n\n```\n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor\n$ vagrant reload\n```\n\nSelenium server will be started automatically on boot.\n\n# Access VM using SSH\n\nUsername: vagrant  Password: vagrant\n\n## Access VM using VagrantSSH (does not require password):\n\n```   \n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor\n$ vagrant ssh\n```\n\n## Access VM using SSH client (requires password):\n\n```   \nssh vagrant@192.168.33.10\n```\n\n# Selenium addresses\n\nThere are two options you can set Selenium addresse in your Protractor configuration.\n\n### If you will run Protractor inside the VM which is provided a complete Selenium and Protractor, use this address\n\n```\nexports.config = {\n  ...\n  seleniumAddress: \'http://localhost:4444/wd/hub\',\n  ...\n}\n```\n\nRunning example \n\n```\n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor\n$ vagrant ssh\n$ cd ~/GettingStarted/runProtractorInsideVM\n$ protractor conf.js\n```\n\n\n### If you will run Protractor on your physical computer and use Selenium inside the VM , use this address\n\n```\nexports.config = {\n  ...\n  seleniumAddress: \'http://192.168.33.10:4444/wd/hub\',\n  ...\n}\n```\n\nRunning example \n\n```\n$ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor/GettingStarted/runProtractorOutsideVM\n##  If you dont have "protractor" command, Use npm to install Protractor globally with "npm install -g protractor"\n$ protractor conf.js\n```\n\n\n# Modify Vagrant configuration \n\n### Memory provisioning\n\n```\n# Go to edit Vagrantfile (vb.memory = <MemoryInMB>)\n$ vagrant reload\n```\n\n### Headless E2E Testing \n\n```\n# Go to edit Vagrantfile (vb.gui = false)\n$ vagrant reload\n```\n\n### GUI E2E Testing\n\n```\n# Go to edit Vagrantfile (vb.gui = true)\n$ vagrant reload\n```\n\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '1fbcbe4e341cfec4d837d0ec311aa4df988465cc',
+18 silly publish   _id: 'vagrant-e2etesting-protractor@0.0.9',
+18 silly publish   _shasum: 'e36a490e76bfbb85209842b0c9ab197edd5ff7c8',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name vagrant-e2etesting-protractor
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/vagrant-e2etesting-protractor
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /Users/vorachet/.npm/vagrant-e2etesting-protractor/0.0.9/package.tgz
+26 verbose request uri https://registry.npmjs.org/vagrant-e2etesting-protractor
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 5:31:24 PM
+29 verbose request id 44e86a8dc376ebf8
+30 http request PUT https://registry.npmjs.org/vagrant-e2etesting-protractor
+31 http 403 https://registry.npmjs.org/vagrant-e2etesting-protractor
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Wed, 30 Dec 2015 10:31:39 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-sin6921-SIN',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1451471485.159697,VS0,VE14405' }
+33 verbose request invalidating /Users/vorachet/.npm/registry.npmjs.org/vagrant-e2etesting-protractor on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.0.9." : vagrant-e2etesting-protractor
+35 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:88:13)
+35 verbose stack     at Request.emit (events.js:173:7)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+35 verbose stack     at emitOne (events.js:83:20)
+35 verbose stack     at Request.emit (events.js:170:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid vagrant-e2etesting-protractor
+38 verbose cwd /Users/vorachet/vagrant-e2etesting-protractor
+39 error Darwin 15.2.0
+40 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+41 error node v5.2.0
+42 error npm  v3.3.12
+43 error code E403
+44 error "You cannot publish over the previously published version 0.0.9." : vagrant-e2etesting-protractor
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
