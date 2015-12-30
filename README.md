@@ -90,6 +90,7 @@ Set Selenium address to [http://192.168.33.10:4444/wd/hub]()
 # Running test script examples
 
 ```
+# Inside VM
 $ cd ~/GettingStarted/examples/SimpleTest
 $ protractor conf.js
 ```
