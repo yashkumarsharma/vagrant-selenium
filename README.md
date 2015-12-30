@@ -45,7 +45,7 @@ NetworkInterfaces:
          |       ^
          v       |
        [eth1]  [eth0]         
-    [    AnxTestBox   ]  (~/VirtualBox\ VMs/anxtestbox)
+    [    VM  ]  
          eth0: 10.0.2.15  (NAT)
          eth1: 192.168.33.10  (HostOnly)
          lo: 127.0.0.1
