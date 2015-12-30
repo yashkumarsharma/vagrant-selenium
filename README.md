@@ -6,6 +6,9 @@ Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12
 
 # Install
 
+  * [Vagrant](https://www.vagrantup.com/downloads.html)
+  * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
 ```
 $ git clone https://github.com/vorachet/vagrant-e2etesting-protractor.git
 $ cd vagrant-e2etesting-protractor
