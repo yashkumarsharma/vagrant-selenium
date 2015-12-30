@@ -55,7 +55,7 @@ NetworkInterfaces:
 ```
 
 
-# Running VM
+# Run VM
 
 ```
 $ vagrant up
@@ -79,15 +79,15 @@ Use SSH client (requires password):
 ssh vagrant@192.168.33.10
 ```
 
-# Running Protractor inside VM
+# Run Protractor inside VM
 
 Set Selenium address to [http://localhost:4444/wd/hub]()
 
-# Running Protractor outside VM
+# Run Protractor outside VM
 
 Set Selenium address to [http://192.168.33.10:4444/wd/hub]()
 
-# Running test script examples
+# Run test script examples
 
 ```
 # Inside VM
@@ -95,29 +95,26 @@ $ cd ~/GettingStarted/examples/SimpleTest
 $ protractor conf.js
 ```
 
-# Modifying Vagrant configuration 
+# Modify Vagrant configuration 
 
 ### Memory provisioning
 
 ```
-$ vagrant halt
 # Go to edit Vagrantfile (vb.memory = <MemoryInMB>)
-$ vagrant up
+$ vagrant reload
 ```
 
-### E2E Testing Headless mode
+### Headless E2E Testing 
 
 ```
-$ vagrant halt
 # Go to edit Vagrantfile (vb.gui = false)
-$ vagrant up
+$ vagrant reload
 ```
 
-### E2E Testing GUI mode
+### GUI E2E Testing
 
 ```
-$ vagrant halt
 # Go to edit Vagrantfile (vb.gui = true)
-$ vagrant up
+$ vagrant reload
 ```
 

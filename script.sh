@@ -5,7 +5,7 @@
 echo "Install the packages..."
 #=========================================================
 sudo apt-get update
-sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox git 
+sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox git build-essential
 
 #=========================================================
 echo "Set autologin for the Vagrant user..."
@@ -92,8 +92,8 @@ echo "ok"
 #=========================================================
 echo "Install Node.js and Protractor"
 #=========================================================
-#
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+
+NODEJS_VERSION=$(curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -)
 sudo apt-get install -y nodejs
 sudo npm install -g protractor
 
