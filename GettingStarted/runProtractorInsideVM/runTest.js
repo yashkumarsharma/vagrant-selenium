@@ -1,1 +1,1 @@
-protractor confInsideVM.js
+protractor conf.js

@@ -1,1 +1,1 @@
-protractor confjs
+protractor conf.js
