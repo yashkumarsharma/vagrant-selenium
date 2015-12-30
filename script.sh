@@ -7,15 +7,6 @@ echo "Install the packages..."
 sudo apt-get update
 sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox git 
 
-
-#=========================================================
-echo "Install Node.js and Protractor"
-#=========================================================
-#
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo npm install -g protractor
-
 #=========================================================
 echo "Set autologin for the Vagrant user..."
 #=========================================================
@@ -71,25 +62,20 @@ tmux send-keys -t chrome-driver:0 'java -jar selenium-server-standalone.jar' C-m
 EOF
 )
 echo "${TMUX_SCRIPT}"
-echo "${TMUX_SCRIPT}" > tmux.sh
-chmod +x tmux.sh
-chown vagrant:vagrant tmux.sh
+echo "${TMUX_SCRIPT}" > startSelenium.sh
+chmod +x startSelenium.sh
+chown vagrant:vagrant startSelenium.sh
 echo "ok"
 
-
-#=========================================================
-echo -n "Install protractor..."
-#=========================================================
-node -g protractor
-echo "ok"
 
 #=========================================================
 echo -n "Install startup scripts..."
 #=========================================================
 STARTUP_SCRIPT=$(cat <<EOF
 #!/bin/sh
-~/tmux.sh &
+~/startSelenium.sh &
 xterm &
+echo 'Selenium started!'
 EOF
 )
 echo "${STARTUP_SCRIPT}" > /etc/X11/Xsession.d/9999-common_start
@@ -101,6 +87,16 @@ echo -n "Add host alias..."
 #=========================================================
 echo "192.168.33.1 host" >> /etc/hosts
 echo "ok"
+
+
+#=========================================================
+echo "Install Node.js and Protractor"
+#=========================================================
+#
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g protractor
+
 
 #=========================================================
 echo "Reboot the VM"
