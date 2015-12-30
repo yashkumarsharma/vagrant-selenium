@@ -1,12 +1,14 @@
 ```
-Created and tested on 28 Dec 2015 with MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12 
+Tested on MacOS 10.11.2 , Vagrant 1.7.4, VirtualBox 5.0.12 
 ```
 
-# References
+# Install
 
- 1. Vagrant software, [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html])
- 2. VirtualBox software (requries 64 bits machine), [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
-
+```
+$ git clone https://github.com/vorachet/vagrant-e2etesting-protractor.git
+$ cd vagrant-e2etesting-protractor
+$ vagrant up
+```
 
 # Software Specifications
 
@@ -41,11 +43,8 @@ NetworkInterfaces:
     [VirtualBoxSoftware]  
          |       ^
          v       |
-    [VirtualBox's VM]
-         |       ^
-         v       |
        [eth1]  [eth0]         
-    [    VM  ]  
+       [    VM      ]  
          eth0: 10.0.2.15  (NAT)
          eth1: 192.168.33.10  (HostOnly)
          lo: 127.0.0.1
