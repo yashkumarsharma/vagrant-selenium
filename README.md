@@ -1,6 +1,6 @@
 # Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor
 
-# Prerequisites Software
+# Prerequisite Software
 
   * [Vagrant https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
   * [VirtualBox https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
