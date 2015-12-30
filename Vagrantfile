@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "script.sh"
 
   config.vm.provider :virtualbox do |vb|
-    vb.gui = false
+    vb.gui = true
     vb.memory = 512
   end
 end
