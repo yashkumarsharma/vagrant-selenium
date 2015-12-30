@@ -1,13 +1,12 @@
 # Pre-installed Selenium server Vagrant configuration for a complete AngularJS E2E Testing with Protractor
 
-![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
 
 # Prerequisites Software
 
   * [Vagrant](https://www.vagrantup.com/downloads.html)
   * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-# Install with NPM (Run Vagrant in your Node project)
+# Install 
 
 ```
 $ cd {YourNodeJSProject}
@@ -19,7 +18,10 @@ $ cd node_modules/vagrant-e2etesting-protractor
 $ vagrant up
 ```
 
-There is a folder named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  
+![Logo](https://github.com/vorachet/vagrant-e2etesting-protractor/raw/master/demo.gif)
+
+
+There are two folders named "TESTES" and "GettingStarted" configured in the Vagrant configuration. The default sync method is rsync. It does not require you give root password. The rsync synced folder does a one-time one-way sync from the machine running to the machine being started by Vagrant.  
 
 The default Sync folder settings
 ```
@@ -27,11 +29,7 @@ The default Sync folder settings
 ./node_modules/vagrant-e2etesting-protractor/GettingStarted --> VM --> /home/vagrant/GettingStarted
 ```
 
-You can change type: "rsync" to type: "nfs" in Vagrantfile for allowing you have real-time sync without reloading Vagrant.
-
-```
-Windows users: NFS folders do not work on Windows hosts. Vagrant will ignore your request for NFS synced folders on Windows.
-```
+You can change type: "rsync" to type: "nfs" in Vagrantfile for allowing you have real-time sync without reloading Vagrant. For Windows users: NFS folders do not work on Windows hosts. Vagrant will ignore your request for NFS synced folders on Windows.
 
 In order to manage the collection of Protractor files in your project, you can also choose to make a symbolic link from the TESTES folder to your project workspace outside the node_modules folder for doing file sync between your test files and the VM.
 
