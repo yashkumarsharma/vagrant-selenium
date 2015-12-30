@@ -1,6 +1,6 @@
 # Pre-installed Selenium infrastructure Vagrant configuration for a complete AngularJS E2E Testing with Protractor
 
-This project is designed for Selenium beginners who want to install a complete Selenium infrastructure within minutes and one step. E2E-Testing experts who are a minimalist can also choose to add this project to your minimal set in deploying a complete Selenium infrastructure for Protractor users and you can also consider to extend this project for your advanced test automation. Everyting can be installed with single npm install command which allows AngularJS developers/testers get ready on a consistent Protractor environment.
+This project is designed for Selenium beginners who want to install a complete Selenium infrastructure including real and headless browser support within minutes without knowing in the technical detail of Selenium installation. E2E-Testing experts who are a minimalist can also choose to add this project to your minimal set in deploying a complete Selenium infrastructure for Protractor users and you can also consider to extend this project for your advanced test automation. Everyting can be installed with single npm install command which allows AngularJS developers/testers get ready on a consistent Protractor environment.
 
 # Prerequisite Software
 
