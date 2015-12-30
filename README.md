@@ -117,7 +117,9 @@ ssh vagrant@192.168.33.10
 
 # Selenium addresses
 
-## Running Protractor inside VM 
+There are two options you can set Selenium addresse in your Protractor configuration.
+
+### If you will run Protractor inside the VM which is provided a complete Selenium and Protractor, use this address
 
 ```
 exports.config = {
@@ -127,7 +129,7 @@ exports.config = {
 }
 ```
 
-### Example
+Running example 
 
 ```
 $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor
@@ -137,7 +139,7 @@ $ protractor conf.js
 ```
 
 
-## Running Protractor outside VM 
+### If you will run Protractor on your physical computer and use Selenium inside the VM , use this address
 
 ```
 exports.config = {
@@ -145,8 +147,9 @@ exports.config = {
   seleniumAddress: 'http://192.168.33.10:4444/wd/hub',
   ...
 }
+```
 
-### Example
+Running example 
 
 ```
 $ cd {YourNodeJSProject}/node_modules/vagrant-e2etesting-protractor/GettingStarted/runProtractorOutsideVM
