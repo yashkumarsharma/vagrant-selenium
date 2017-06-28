@@ -97,11 +97,18 @@ echo "${STARTUP_SCRIPT}" > /etc/X11/Xsession.d/9999-common_start
 chmod +x /etc/X11/Xsession.d/9999-common_start
 echo "ok"
 
+
+#=========================================================
+echo -n "Copy hosts from host machine to guest"
+#=========================================================
+cp /vagrant/hosts /etc/hosts
+
 #=========================================================
 echo -n "Add host alias..."
 #=========================================================
 echo "192.168.33.1 host" >> /etc/hosts
 echo "ok"
+
 
 #=========================================================
 echo "Reboot the VM"

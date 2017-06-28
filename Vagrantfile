@@ -14,6 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vb|
     vb.gui = true
+    vb.memory = 1500
+    vb.cpus = 2
   end
 
   config.trigger.before :up do
