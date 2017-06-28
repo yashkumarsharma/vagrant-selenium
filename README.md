@@ -1,4 +1,15 @@
 # vagrant-selenium
+
+It's extend version of https://github.com/Anomen/vagrant-selenium , which now not work.
+
+Features :
+- coping hosts file from host machine to guest
+- updated java to 8 version, which compile with the last selenium app
+- set correct permissions for vagrant user
+
+
+
+
 Vagrant configuration base on ubuntu/trusty64, ready to be used with Selenium.
 
 ## Introduction
@@ -10,6 +21,7 @@ Selenium allows you to automate tests in Web Browsers. To do so, you need to hav
 1. Install [Vagrant](https://www.vagrantup.com)
 2. Clone this git repository
 3. Run the command `vagrant up`
+4. vagrant plugin install vagrant-triggers
 
 This vagrant works for *Virtualbox*, on a 64 bits machine.
 
@@ -32,6 +44,6 @@ When the VM starts, it automatically runs selenium server, along with the google
 
 On your host machine, you can send the tests on this address: **localhost:4444**, just as if you installed selenium on your host machine.
 
-## How to access the host from the guest machine?
+## Host machine local sites
 
-An alias already exists for your convenience: *http://host/* will target your host machine.
+All sites will be able from guest machine.
