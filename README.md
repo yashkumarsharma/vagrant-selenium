@@ -1,6 +1,6 @@
 # vagrant-selenium
 
-It's extend version of https://github.com/Anomen/vagrant-selenium , which now not work.
+It's extend version of https://github.com/Anomen/vagrant-selenium , which not work now.
 
 Features :
 - coping hosts file from host machine to guest
