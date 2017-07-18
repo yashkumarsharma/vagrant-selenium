@@ -17,11 +17,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.gui = true
     vb.memory = 1500
     vb.cpus = 2
+    ### Change network card to PCnet-FAST III
+    # For NAT adapter
+    # vb.customize ["modifyvm", :id, "--nictype1", "Am79C973"]
+    # For host-only adapter
+    # vb.customize ["modifyvm", :id, "--nictype2", "Am79C973"]
   end
 
-  config.trigger.before :up do
-    run "php repeatHosts.php"
-  end
+  # config.trigger.before :up do
+  #   run "php repeatHosts.php"
+  # end
 
   config.vm.network :public_network
 
